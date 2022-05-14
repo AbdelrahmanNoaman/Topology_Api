@@ -70,7 +70,6 @@ public class ApplicationManager {
     }
 
     private static void readJSON(String FileName) {
-
         ApiExecuter.ReadTopology(FileName);
     }
 
@@ -86,12 +85,19 @@ public class ApplicationManager {
 
     private static void deleteTopology(String TopologyID) {
 
-        ApiExecuter.DeleteTopology(TopologyID);
+        boolean a=ApiExecuter.DeleteTopology(TopologyID);
+        if(a==false)
+            System.out.println("this ID doesn't exist in the memory");
     }
 
     private static void queryDevices(String TopologyID) {
 
         List<Component>List=ApiExecuter.queryDevices(TopologyID);
+        if(List==null)
+        {
+            System.out.println("Sorry, this topology isn't in the memory");
+            return;
+        }
         for (Component i : List) {
             i.printComponent();
         }
@@ -102,8 +108,7 @@ public class ApplicationManager {
         List<Component> MyList=ApiExecuter.queryDevicesWithNetlistNode(TopologyID, NodeName);
         if(MyList==null)
         {
-            System.out.println("There are no nodes connected in node " + NodeName);
-
+          return;
         }
         else {
             System.out.println("At Node " + NodeName + " These Components are connected :");

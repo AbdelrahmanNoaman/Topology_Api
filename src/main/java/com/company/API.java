@@ -17,6 +17,7 @@ public class API {
 
     public static void ReadTopology(String FileName)
     {
+
         JSONParser jsonParser = new JSONParser();
         try (FileReader reader = new FileReader(FileName)) {
             Object obj = jsonParser.parse(reader);
@@ -24,8 +25,10 @@ public class API {
             parseTopology(employeeList);
         }
         catch(FileNotFoundException e){
+            System.out.println("File isn't found.");
             e.printStackTrace();
         } catch(IOException e){
+            System.out.println("Error in IO.");
             e.printStackTrace();
         } catch(ParseException e){
             e.printStackTrace();
@@ -41,7 +44,12 @@ public class API {
 
     public static void WriteTopology(String TopologyID)
     {
-        try (FileWriter file = new FileWriter(TopologyID + ".json")) {
+        if(TopologiesMemory.containsKey(TopologyID)==false)
+        {
+            System.out.println("Sorry, this topology isn't in the memory");
+            return;
+        }
+        try (FileWriter file = new FileWriter( "Topology2.json")) {
             //We can write any JSONArray or JSONObject instance to the file
             file.write(TopologiesMemory.get(TopologyID).getJSONOBJ().toJSONString());
             file.flush();
@@ -67,12 +75,24 @@ public class API {
         return false;
     }
     public List<Component> queryDevices(String topologyID) {
+
+        if(TopologiesMemory.containsKey(topologyID)==false)
+        {
+            return null;
+        }
         return TopologiesMemory.get(topologyID).GetComponentList();
     }
 
     public List<Component> queryDevicesWithNetlistNode(String TopologyID, String Node) {
+        if(TopologiesMemory.containsKey(TopologyID)==false)
+        {
+            System.out.println("Wrong topology id or at this node there are no connections");
+            return null;
+        }
         if(TopologiesMemory.get(TopologyID).getNodes()==null)
         {
+            System.out.println("Hamada2");
+            System.out.println("There are no nodes connected in node " + Node);
             return null;
         }
         else
