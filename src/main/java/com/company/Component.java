@@ -1,34 +1,36 @@
 package com.company;
 
-public class Component {
 
+public class Component {
     private String ComponentType;
-    private int ComponentId;
+    private String ComponentId;
+    private Device componentDevice;
+
+
+    public Component(String componentType, String componentId,Device ComponentDevice) {
+        setComponentType(componentType);
+        setComponentId(componentId);
+        componentDevice=ComponentDevice;
+    }
+    public Component() {
+
+    }
+    public void printComponent(){
+        System.out.println("Component id ="+ComponentId);
+        System.out.println("Component type ="+ComponentType);
+        componentDevice.PrintDevice();
+    }
 
     public String getComponentType() {
         return ComponentType;
     }
-
     public void setComponentType(String componentType) {
         ComponentType = componentType;
     }
-
-    public int getComponentId() {
+    public String getComponentId() {
         return ComponentId;
     }
-
-    public void setComponentId(int componentId) {
+    public void setComponentId(String componentId) {
         ComponentId = componentId;
     }
-
-    public Device getDevice() {
-        return device;
-    }
-
-    public void setDevice(Device device) {
-        this.device = device;
-    }
-
-    private Device device;
-
 }

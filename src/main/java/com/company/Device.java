@@ -1,11 +1,11 @@
 package com.company;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Device {
-    private String DeviceType;
-    private int DeviceDefaultVal;
-    private int DeviceMinVal;
-    private int DeviceMaxVal;
 
+    private HashMap<String, String> Netlist;
+    private String DeviceType;
     public String getDeviceType() {
         return DeviceType;
     }
@@ -13,33 +13,23 @@ public class Device {
     public void setDeviceType(String deviceType) {
         DeviceType = deviceType;
     }
-
-    public int getDeviceDefaultVal() {
-        return DeviceDefaultVal;
+    public void PrintDevice()
+    {
+        for (Map.Entry<String, String> set :
+                Netlist.entrySet())
+        {
+            System.out.println(" The Terminal with id = "+ set.getKey()+" is connected to "+set.getValue());
+        }
     }
 
-    public void setDeviceDefaultVal(int deviceDefaultVal) {
-        DeviceDefaultVal = deviceDefaultVal;
+    public Device(HashMap<String, String> netlist) {
+        setNetlist(netlist);
     }
 
-    public int getDeviceMinVal() {
-        return DeviceMinVal;
+    public HashMap<String, String> getNetlist() {
+        return Netlist;
     }
-
-    public void setDeviceMinVal(int deviceMinVal) {
-        DeviceMinVal = deviceMinVal;
+    public void setNetlist(HashMap<String, String> netlist) {
+        Netlist = netlist;
     }
-
-    public int getDeviceMaxVal() {
-        return DeviceMaxVal;
-    }
-
-    public void setDeviceMaxVal(int deviceMaxVal) {
-        DeviceMaxVal = deviceMaxVal;
-    }
-
-
-
-
-
 }
