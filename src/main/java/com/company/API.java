@@ -43,6 +43,15 @@ public class API {
     public HashMap<String, Topology> getMemory() {
         return TopologiesMemory;
     }
+    /**
+     * Gets the Ids of the Topologies in the memory
+     * @return Set of strings"IDs"
+     */
+
+    public Set<String> getTogologiesIDs() {
+        return TopologiesMemory.keySet();
+    }
+
 
     /**
      * Sets the API's Memory
@@ -76,7 +85,8 @@ public class API {
             return true;
         }
         catch (IOException | ParseException e) {
-            throw new RuntimeException(e);
+            System.out.println("\nSorry, file isn't found\n");
+            return false;
         }
     }
     /**
@@ -100,21 +110,21 @@ public class API {
     {
         if(TopologiesMemory.containsKey(TopologyID)==false)
         {
-            System.out.println("Sorry, this topology isn't in the memory");
+            System.out.println("\nSorry, this topology isn't in the memory\n");
             return false;
         }
         try (FileWriter file = new FileWriter( "Topology2.json")) {
             //We can write any JSONArray or JSONObject instance to the file
-            if(TopologiesMemory.get(TopologyID)==null) {
+            if(TopologiesMemory.get(TopologyID)!=null) {
                 file.write(TopologiesMemory.get(TopologyID).getJSONOBJ().toJSONString());
                 file.flush();
                 return true;
             }
         } catch (IOException e) {
-            System.out.println("Error in IO.");
+            System.out.println("\nError in IO.\n");
             e.printStackTrace();
         } catch (NullPointerException e){
-            System.out.println("This ID isn't in memory.");
+            System.out.println("\nThis ID isn't in memory.\n");
             e.printStackTrace();
         }
         return false;
