@@ -13,7 +13,7 @@
 An API library which provides the following functionalities of accessing, managing and storing device topologies.
 
 # 📝 Description
-<strong>this Library can make functionalities of :</strong>
+<strong>This Library can make functionalities of :</strong>
 1. Read a topology from a given JSON file and store it in the memory.
 2. Write a given topology from the memory to a JSON file.
 3. Query about which topologies are currently in the memory.
