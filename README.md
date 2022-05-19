@@ -25,7 +25,7 @@ An API library which provides the following functionalities of accessing, managi
 
 # Class Structure
 
-<img src="" alt="Class Hierarchy">
+<img src="Screenshots/Class_H.jpeg" alt="Class Hierarchy">
 
 # 🏁 Getting Started
 
