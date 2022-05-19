@@ -37,12 +37,12 @@ An API library which provides the following functionalities of accessing, managi
 * It contains a main loop of choosing functionalities on topologies or testing them then if functionalities is chosen
   we will go to the loop of choosing functionalities which is in the ApplicationManager class that we will discuss
 ### ApplicationManager 
-*This class creates an object from the API class which is used to call the functionalities in API class
-*It contains the main loop of the API which allows the user to select which operation to perform from API functionalities
+* This class creates an object from the API class which is used to call the functionalities in API class
+* It contains the main loop of the API which allows the user to select which operation to perform from API functionalities
 
 ### API
 
-This class contains the memory of the API as a HashMap<String, Topology> where for each topology ID there is a Topology with all of it's data
+* This class contains the memory of the API as a HashMap<String, Topology> where for each topology ID there is a Topology with all of it's data
 
 * This class contains the functions of the API :-
     * boolean ReadTopology(String FileName)
