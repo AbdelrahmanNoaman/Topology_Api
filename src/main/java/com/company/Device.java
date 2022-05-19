@@ -148,7 +148,7 @@ public class Device {
 
     /**
      * Set Netlist of the device
-     * @param netlist -HashMap<String,String>
+     * @param netlist -HashMap of String , String
      */
 
     public void setNetlist(HashMap<String, String> netlist) {
