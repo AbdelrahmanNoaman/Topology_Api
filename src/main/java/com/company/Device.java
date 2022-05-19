@@ -64,11 +64,16 @@ public class Device {
 
     public void PrintDevice()
     {
+        System.out.println(Name +" :");
+        System.out.println("\t\t Default: "+defaultvalue);
+        System.out.println("\t\t Min: "+minvalue);
+        System.out.println("\t\t Max: "+maxvalue);
         for (Map.Entry<String, String> set :
                 Netlist.entrySet())
         {
             System.out.println(" The Terminal with id = "+ set.getKey()+" is connected to "+set.getValue());
         }
+        System.out.println("\n");
     }
     /**
      * Get name of calling device

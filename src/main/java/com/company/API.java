@@ -139,6 +139,7 @@ public class API {
     public boolean DeleteTopology(String TopologyId) {
         if (TopologiesMemory.containsKey(TopologyId)) {
             TopologiesMemory.remove(TopologyId);
+            System.out.println("\nTopology with ID "+TopologyId+" has been deleted\n");
             return true;
         }
         return false;
