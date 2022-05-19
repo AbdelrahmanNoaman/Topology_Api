@@ -76,7 +76,7 @@ Each Device contains:
 * Min value 
 * Max value
 
-###TwoTerminal
+### TwoTerminal
 * TwoTerminal class inherits from class device 
 * TwoTerminal has an extra variable (TwoTerminalType) which determines if it's a resistor or capacitor or..(etc)
 * It contains setter and getter for the Terminals (Nodes) of the device
@@ -90,11 +90,11 @@ Each Device contains:
 * MosTransistor has an extra variable (TransistorType) which determines if it's Nmos or Pmos
 * It contains setter and getter for the Terminals (Nodes) of the device
 * MosTransistor class has setTrasistorType function that it's overridden in the children of this class
-###Nmos
+### Nmos
 * The Nmos inherits from MosTransistor
 * It overrides function setTrasistorType() to Determine the type of this transistor
 
-###Pmos
+### Pmos
 * The Pmos inherits from MosTransistor
 * It overrides function setTrasistorType() to Determine the type of this transistor
 
