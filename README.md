@@ -26,6 +26,7 @@ An API library which provides the following functionalities of accessing, managi
 # Class Structure
 
 <img src="Screenshots/Class_H.jpeg" alt="Class Hierarchy">
+<img src="Screenshots/Class_H2.jpeg" alt="Class Hierarchy">
 
 # 🏁 Getting Started
 
@@ -144,6 +145,23 @@ git clone https://github.com/AbdelrahmanNoaman/Topology_Api
 
 #### Testing
 <img src="Screenshots/Testing.jpeg" alt="8">
+
+#### Error Handlers
+###### File doesn't exist in reading a file
+<img src="Screenshots/Error1.jpeg" alt="8">
+
+###### TogologyID doesn't exist in Writing a JSON file in memory
+<img src="Screenshots/Error2.jpeg" alt="8">
+
+###### TogologyID doesn't exist in Deleting a JSON file from memory
+<img src="Screenshots/Error3.jpeg" alt="8">
+
+###### TogologyID doesn't Exist
+<img src="Screenshots/Error4.jpeg" alt="8">
+
+###### TogologyID doesn't Exist 
+<img src="Screenshots/Error5.jpeg" alt="8">
+
 
 ## Contributors
 
